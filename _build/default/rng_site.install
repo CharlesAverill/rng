@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/rng_site/META"
+  "_build/install/default/lib/rng_site/dune-package"
+  "_build/install/default/lib/rng_site/opam"
+]
+doc: [
+  "_build/install/default/doc/rng_site/README.md"
+]

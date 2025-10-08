@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "taskbar taskbar"
+        "sidebar main"
+        "console console";
+    height: 100vh;
+    background: #f7f9fc;
+    color: #222;
+}
+
+/* Taskbar (top) */
+header {
+    grid-area: taskbar;
+    background: #2e3b4e;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+header input[type="file"] {
+    color: white;
+}
+
+/* Sidebar (left) */
+nav {
+    grid-area: sidebar;
+    background: #394b63;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    overflow: scroll;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s;
+    margin-bottom: 5px;
+}
+
+nav button:hover,
+nav button.active {
+    background: #50627d;
+}
+
+/* Main content area */
+main {
+    grid-area: main;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+/* Console (bottom) */
+#console-container {
+  grid-area: console;
+  background: #1e1e1e;
+  color: #00ff6a;
+  font-family: monospace;
+  height: 150px;
+  border-top: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+#console {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  margin: 10px;
+}
+
+/* Floating header */
+#console-header {
+  position: sticky; /* floats above the logs */
+  top: 0;
+  height: 0;
+  background: transparent; /* header is transparent */
+  z-index: 2;
+  padding: 0.3rem 0.5rem;
+  float: right;
+}
+
+/* Clear button visible */
+#clear-console {
+  background: #1e1e1e; /* opaque so it stands out */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#clear-console:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* --- Toolbar --- */
+header#toolbar {
+  display: flex;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header#toolbar h1 {
+  font-size: 1.2em;
+  text-align: left;
+  margin-right: 1em;
+}
+
+/* --- Menu buttons --- */
+.menu {
+  position: relative;
+  margin-right: 1em;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  text-decoration: underline;
+}
+
+/* --- Dropdown --- */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  border: 1px solid #555;
+  padding: 0.25em 0;
+  z-index: 1001;
+  min-width: 180px;
+}
+
+.menu:hover .dropdown {
+  display: block;
+}
+
+.menu-item {
+  display: block;
+  background: none;
+  color: white;
+  border: none;
+  text-align: left;
+  padding: 0.4em 1em;
+  width: 100%;
+  cursor: pointer;
+  font-size: small;
+  font-weight: normal;
+}
+
+.menu-item:hover {
+  background: #444;
+}
+
+.menu-item:active {
+    background: #666;
+}
+
+section>div {
+    border: 1px solid black;
+    padding: 10px;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+    border-radius: 6px;
+}
