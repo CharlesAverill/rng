@@ -13,5 +13,4 @@
 #  ; build_dir = In_build_dir "default"
 #  ; instrument_with = []
 #  }
-$ /home/charlesaverill/.opam/ocaml=5.4.0/bin/ocamlc.opt -config > /tmp/dune_26e1a4_output
-$ (cd _build/default/test && ./test_rng_site.exe)
+$ /home/charlesaverill/.opam/ocaml=5.4.0/bin/ocamlc.opt -config > /tmp/dune_789fe7_output

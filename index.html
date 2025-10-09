@@ -33,8 +33,8 @@
 
   <nav>
     <button class="active" data-target="basic">Numbers</button>
+    <button data-target="collections">Collections</button>
     <button data-target="distributions">Distributions</button>
-    <button data-target="weighted">Weighted Selection</button>
   </nav>
 
   <main>
@@ -65,15 +65,36 @@
       </div>
     </section>
 
+    <section id="collections">
+      <div>
+        <h3>Select from List</h3>
+        <input type="checkbox" id="weighted-weighted-checkbox">
+        <label for="weighted-weighted-checkbox">Weighted</label>
+        <br>
+        <button id="weighted-addrow">Add Row</button> <button id="weighted-deleterow">Delete Row</button> <button id="weighted-clear">Clear</button>
+        <br>
+        <table id="weighted-table">
+          <thead>
+            <th>Item</th>
+            <th id="weighted-table-weight-header">Weight</th>
+          </thead>
+          <tbody>
+            <!-- 
+              <tr>
+                <td>Item 1</td>
+                <td class="weighted-table-weight-cell">0.1</td>
+              </tr>
+            -->
+          </tbody>
+        </table>
+        <button id="weighted-select">Select</button>
+      </div>
+    </section>
+
     <section id="distributions">
       <h2>Distributions</h2>
       <button id="gaussian">Gaussian</button>
       <button id="exponential">Exponential</button>
-    </section>
-
-    <section id="weighted">
-      <h2>Weighted Selection</h2>
-      <button id="weighted-select">Select</button>
     </section>
 
     <section id="custom">

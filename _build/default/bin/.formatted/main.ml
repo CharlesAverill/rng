@@ -38,6 +38,7 @@ let () =
   Random.self_init ();
 
   Tabs.Numbers.setup ();
+  Tabs.Collections.setup ();
 
   bind_click "download-log" download_console_log;
   bind_click "clear-console" clear_console_lines;
@@ -47,13 +48,7 @@ let () =
   bind_click "gaussian" (fun () -> error "Gaussian RNG not implemented yet");
 
   bind_click "exponential" (fun () ->
-      error "Exponential RNG not implemented yet");
-
-  (* Weighted *)
-  bind_click "weighted-select" (fun () ->
-      match Rng.Collections.choose [ "a"; "b"; "c" ] with
-      | None -> error "No choice made"
-      | Some x -> append_text "Weighted Select" x)
+      error "Exponential RNG not implemented yet")
 
 (* Optional: clear console on entropy upload *)
 (* let entropy_input = get_el "entropy" in
